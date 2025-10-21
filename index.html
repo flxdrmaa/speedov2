@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speedometer & Head Unit</title>
+  <link href="https://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Speedometer -->
+  <main class="speedo-root">
+    <div class="left-bars"><div class="bar-container"><div class="bar-label">H</div><div class="bar health"><div class="bar-fill" id="health-bar"></div></div><div class="bar-percentage" id="health-percent">100%</div></div><div class="bar-container"><div class="bar-label">F</div><div class="bar fuel"><div class="bar-fill" id="fuel-bar"></div></div><div class="bar-percentage" id="fuel-percent">100%</div></div></div>
+    <div class="center-panel"><div class="speed-container"><div class="speed-display" id="speed-display">0</div><div class="gear-display" id="gear-display">N</div></div><div class="speed-unit" id="speed-unit">MPH</div><div class="rpm-container"><div id="rpm-boxes"></div></div><div class="indicators"><div class="icon indicator" id="icon-left"><img src="https://img.icons8.com/pulsar-line/50/circled-left-2.png"/></div><div class="icon indicator" id="icon-engine"><img src="https://img.icons8.com/ios/50/engine.png"/></div><div class="icon indicator" id="icon-lights"><img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/external-lights-cars-components-those-icons-lineal-those-icons-1.png" class="low-beam-icon"/><img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/external-lights-cars-components-those-icons-lineal-those-icons.png" class="high-beam-icon"/></div><div class="icon indicator" id="icon-seatbelt"><img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/external-Seatbelt-security-and-protection-(outline)-outline-andi-nur-abdillah.png"/></div><div class="icon indicator" id="icon-right"><img src="https://img.icons8.com/pulsar-line/50/circled-left-2.png"/></div></div></div>
+  </main>
+
+  <!-- Launcher Head Unit -->
+  <div class="head-unit-launcher" id="head-unit-launcher" title="Buka Head Unit"><img src="https://img.icons8.com/fluency-systems-filled/48/FFFFFF/grid.png" alt="Open"/></div>
+
+  <!-- Head Unit Tampilan iPad -->
+  <div class="ipad-root" id="ipad-root">
+    <div class="ipad-screen">
+      <button class="ipad-close-button" id="ipad-close-button">&times;</button>
+      
+      <!-- Home Screen -->
+      <div class="app-grid" id="app-grid">
+        <div class="app-icon" data-app-name="Spotify" data-app-url="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"><img src="https://img.icons8.com/color/96/spotify--v1.png" alt="Spotify"/><span>Spotify</span></div>
+        <div class="app-icon" data-app-name="YouTube" data-app-url="https://www.youtube.com/embed/"><img src="https://img.icons8.com/color/96/youtube-play.png" alt="YouTube"/><span>YouTube</span></div>
+        <div class="app-icon" data-app-name="Musik"><img src="https://img.icons8.com/color/96/musical-notes.png" alt="Musik"/><span>Musik</span></div>
+        <div class="app-icon" data-app-name="GPS"><img src="https://img.icons8.com/color/96/map-marker.png" alt="GPS"/><span>GPS</span></div>
+        <div class="app-icon" data-app-name="Kalkulator"><img src="https://img.icons8.com/color/96/calculator.png" alt="Kalkulator"/><span>Kalkulator</span></div>
+      </div>
+
+      <!-- Tampilan Aplikasi -->
+      <div class="app-view" id="app-view">
+        <div class="app-view-header"><button id="app-home-button"><img src="https://img.icons8.com/ios-filled/50/less-than.png"/><span>Home</span></button><h3 id="app-view-title">App</h3></div>
+        <div class="app-view-content">
+          <iframe id="app-iframe" allow="encrypted-media; autoplay; fullscreen" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
+          
+          <div id="gps-content-view" class="custom-app-view">
+            <img src="https://i.imgur.com/tIAz5zL.jpeg" class="gps-map-image"/>
+            <div id="waypoint-container"></div>
+            <div class="player-marker" id="player-marker"><img src="https://img.icons8.com/color/48/forward-arrow.png"/></div>
+          </div>
+          
+          <div id="music-content-view" class="custom-app-view"><div class="music-player-container"><div class="music-player-display"><img id="music-album-art" src="https://i.imgur.com/D3a2s1d.png" class="album-art"/><h4 id="music-title">Pilih Stasiun Radio</h4><p id="music-artist">Dari daftar putar</p><div class="music-controls"><button id="music-prev"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/rewind.png"/></button><button id="music-play-pause"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/play--v1.png" class="play-icon"/><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/pause--v1.png" class="pause-icon"/></button><button id="music-next"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/fast-forward.png"/></button></div></div><ul id="music-playlist" class="music-playlist"></ul></div></div>
+          
+          <div id="calculator-content-view" class="custom-app-view"><div class="calculator-grid"><div class="calc-display" id="calc-display">0</div><button class="calc-btn calc-op">AC</button><button class="calc-btn calc-op">+/-</button><button class="calc-btn calc-op">%</button><button class="calc-btn calc-op">/</button><button class="calc-btn">7</button><button class="calc-btn">8</button><button class="calc-btn">9</button><button class="calc-btn calc-op">*</button><button class="calc-btn">4</button><button class="calc-btn">5</button><button class="calc-btn">6</button><button class="calc-btn calc-op">-</button><button class="calc-btn">1</button><button class="calc-btn">2</button><button class="calc-btn">3</button><button class="calc-btn calc-op">+</button><button class="calc-btn calc-zero">0</button><button class="calc-btn">.</button><button class="calc-btn calc-op">=</button></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-tick" src="tick.mp3" loop></audio>
+  <audio id="audio-alarm" src="alarm.mp3" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
